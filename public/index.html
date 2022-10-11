@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -37,7 +38,7 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  
+
   <header>
     <div>
       <img src="/images/profile-hex.png">
@@ -50,10 +51,19 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <div>
-      <h2>What are you humming about?</h2>
-      <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctu.</h5>
-    </div></main>
-</body>
 
+    <section class="new-tweet">
+      <h2 class="no-margin">Compose Tweet</h2>
+      <form>
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+        <div class="tweet">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+  </main>
+</body>
 </html>

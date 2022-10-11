@@ -1,0 +1,32 @@
+.no-margin {
+ margin-top: 0;
+}
+
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+  font-weight: 300;
+}
+
+.tweet button {
+  background-color: #4056A1;
+  border: 0;
+  line-height: 1.5;
+  padding-left: 14px;
+  padding-right: 14px;
+  color: white;
+}
+
+textarea {
+  min-width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 5px solid black;
+  max-height: 40px;
+  font-weight: 600;
+  font-size: 24px;
+
+}

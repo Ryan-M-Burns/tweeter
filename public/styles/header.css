@@ -5,7 +5,7 @@ header {
   align-items: center;
   flex-flow: column;
   background-color: rgb(216 153 57);
-  background-image: url("../images/backgrounds/food.png");
+  background-image: linear-gradient(to bottom right, rgba(216, 152, 57, 0.461), rgba(129, 57, 216, 0.436)), url("../images/backgrounds/food.png");
 }
 
 header img {
