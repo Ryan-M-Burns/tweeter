@@ -20,6 +20,17 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+main {
+  display: flex;
+  min-width: 90%;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #545149;
+  background-color: #f4f1ec;
+  background-image: url("../images/backgrounds/foggy-birds.png");
+
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
