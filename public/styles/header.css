@@ -1,0 +1,23 @@
+header {
+  padding-top: 120px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  background-color: rgb(216 153 57)
+  background-image: url(
+}
+
+header img {
+  display: flex;
+  align-self: center;
+}
+
+header h2 {
+  margin-top: 0;
+  font-weight: 300;
+}
+
+header strong {
+  font-weight: 600;
+}
