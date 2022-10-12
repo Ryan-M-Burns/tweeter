@@ -1,15 +1,29 @@
-.no-margin {
-  margin-top: 0;
+.new-tweet {
+  margin: 50px 10px;
+  margin-top: 0px;
 }
 
-.tweet {
+.new-tweet div {
   display: flex;
+  padding-right: 10px;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
-  font-weight: 300;
 }
 
-.tweet button {
+.new-tweet textarea {
+  min-width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: transparent;
+  color: rgb(84, 81, 73);
+  border-bottom: 5px solid rgb(84 81 73);
+  max-height: 40px;
+  font-weight:600;
+  margin: 10px 0px;
+}
+
+.new-tweet div button {
   background-color: #4056A1;
   border: 0;
   line-height: 1.5;
@@ -18,15 +32,3 @@
   color: white;
 }
 
-textarea {
-  min-width: 100%;
-  border: none;
-  resize: none;
-  outline: none;
-  background-color: transparent;
-  border-bottom: 5px solid rgb(84 81 73);
-  color: rgb(84 81 73);
-  max-height: 40px;
-  font-weight: 600;
-  font-size: 24px;
-}

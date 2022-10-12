@@ -9,7 +9,10 @@ html {
   font-weight: 600;
   font-size: 24px;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -23,12 +26,11 @@ body {
 
 main {
   width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: #545149;
-  background-color:rgb(47 40 28 / 25%);
+  padding: 5%;
+  background-color: rgb(47 40 28 / 25%);
   background-image: url("../images/backgrounds/foggy-birds.png");
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
