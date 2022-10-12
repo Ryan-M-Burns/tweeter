@@ -23,12 +23,18 @@
   margin: 10px 0px;
 }
 
-.new-tweet div button {
+.new-tweet button {
   background-color: #4056A1;
   border: 0;
   line-height: 1.5;
   padding-left: 14px;
   padding-right: 14px;
   color: white;
+}
+.new-tweet button:hover {
+  box-shadow: 5px 5px 4px rgba(65, 86, 160, 0.5);
+  position:relative;
+  bottom: 1px;
+  right: 1px;
 }
 
