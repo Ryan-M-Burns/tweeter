@@ -1,45 +1,6 @@
 $(document).ready(() => {
+  const $form = $(".new-tweet");
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
-  const $form = $( ".new-tweet" );
-
-  $form.on("submit", (event) => {
-    event.preventDefault();
-
-    const dataToSend = $form.serialize();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: dataToSend,
-    });
-  });
-
-  
   const renderTweets = function(tweets) {
 
     for (let tweet of tweets) {
@@ -49,7 +10,10 @@ $(document).ready(() => {
 
   };
 
+
   const createTweetElement = function(tweet) {
+    let difference = (Date.now() - tweet.created_at);
+    let timeAgo = timeago.format((Date.now() - difference));
     let $tweet = ` 
     <article class="tweet">
         <header>
@@ -61,7 +25,7 @@ $(document).ready(() => {
         </header>
         <div>${tweet.content.text}</div>
         <footer>
-          <p>${tweet.created_at}</p>
+          <p class="timeago">${timeAgo}</p>
           <span>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -73,6 +37,35 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  renderTweets(data);
+
+  $form.on("submit", (event) => {
+    event.preventDefault();
+
+    const dataToSend = $form.serialize();
+
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: dataToSend,
+      success: function(result) {
+        loadTweets();
+      }
+    });
+
+  });
+
+
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+      success: function(result) {
+        renderTweets(result);
+      }
+    });
+  };
+
+
+  loadTweets();
 
 });

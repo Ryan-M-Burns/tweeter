@@ -1,5 +1,6 @@
 /* Styling for the nav */
 nav {
+  
   position: fixed;
   display: flex;
   justify-content: space-between;
