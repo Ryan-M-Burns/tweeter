@@ -26,6 +26,20 @@ $(document).ready(() => {
     }
   ];
 
+  const $form = $( ".new-tweet" );
+
+  $form.on("submit", (event) => {
+    event.preventDefault();
+
+    const dataToSend = $form.serialize();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: dataToSend,
+    });
+  });
+
+  
   const renderTweets = function(tweets) {
 
     for (let tweet of tweets) {
