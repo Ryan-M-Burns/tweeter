@@ -33,8 +33,7 @@
 }
 .new-tweet button:hover {
   box-shadow: 5px 5px 4px rgba(65, 86, 160, 0.5);
-  position:relative;
+  /* position:relative; */
   bottom: 1px;
   right: 1px;
 }
-
