@@ -56,12 +56,14 @@
   <main class="container">
     <section>
       <form class="new-tweet" method="POST" action="/tweets">
+        <p id="error-box"></p>
         <label for="tweet-text">What are you humming about?</label>
         <textarea placeholder="Go on... create a buzz!" name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
+
       </form>
     </section>
     <section class="tweet-cage">

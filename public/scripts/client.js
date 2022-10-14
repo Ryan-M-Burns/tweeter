@@ -5,7 +5,8 @@ $(document).ready(() => {
 
     for (let tweet of tweets) {
       const $convTweet = createTweetElement(tweet);
-      $(".tweet-cage").prepend($convTweet);
+      $(".tweet-cage").prepend($convTweet.tweetText);
+      $("#safe-text").text($convTweet.unsafeText);
     }
 
   };
@@ -14,7 +15,8 @@ $(document).ready(() => {
   const createTweetElement = function(tweet) {
     let difference = (Date.now() - tweet.created_at);
     let timeAgo = timeago.format((Date.now() - difference));
-    
+    let unsafeText = tweet.content.text;
+
     let $tweet = ` 
     <article class="tweet">
         <header>
@@ -24,7 +26,7 @@ $(document).ready(() => {
           </span>
           <p class="tweeter-tag"><strong>${tweet.user.handle}</strong></p>
         </header>
-        <div>${tweet.content.text}</div>
+          <div id="safe-text"></div>
         <footer>
           <p class="timeago">${timeAgo}</p>
           <span>
@@ -35,7 +37,11 @@ $(document).ready(() => {
         </footer>
       </article>`;
 
-    return $tweet;
+    return {
+      tweetText: $tweet,
+      unsafeText: unsafeText
+    };
+
   };
 
   $form.on("reset", (event) => $("#tweet-text").val("").trigger("input"));
@@ -46,13 +52,15 @@ $(document).ready(() => {
     const dataArray = $form.serializeArray();
     const dataToSend = $form.serialize();
     const dataToText = dataArray[0].value;
+    const $errorBox = $("#error-box");
+
 
     if (!dataToText) {
-      return alert("No message!");
+      return $errorBox.text("Don't you have more to say?").slideDown();
     }
 
     if (dataToText.length > 140) {
-      return alert("Too long!!");
+      return $errorBox.text("Leave the Odysseys to Homer!").slideDown();
     }
 
     $form.trigger('reset');
@@ -61,6 +69,7 @@ $(document).ready(() => {
 
   });
 
+  $("#tweet-text").focus(() => $("#error-box").slideUp());
 
   const loadTweets = () => $.get('/tweets', renderTweets);
 

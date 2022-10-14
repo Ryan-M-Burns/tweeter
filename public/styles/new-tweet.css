@@ -37,3 +37,10 @@
   bottom: 1px;
   right: 1px;
 }
+
+#error-box {
+  color: rgb(107, 27, 21);
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
