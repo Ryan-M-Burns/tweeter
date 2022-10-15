@@ -1,0 +1,25 @@
+.back-to-top {
+  background-color: transparent;
+  bottom: 1%;
+  right: 1%;
+position:fixed;
+  border: 0;
+  display: none;
+  font-size:50px;
+}
+
+
+#button-up {
+  background-color: transparent;
+  border-radius: 50px;
+  color:  #4056A1;
+}
+
+#button-up:hover {
+  box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+}
+
+#button-up:active {
+  color: #00d7c3;
+
+}

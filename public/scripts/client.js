@@ -4,8 +4,23 @@ $(document).ready(() => {
   const $writeTweet = $(".write-tweet-button");
   $("#error-box").hide();
   
-  $writeTweet.on("click", () => $(".new-tweet").toggle(400));
+  $writeTweet.on("click", () => {
+    $(".new-tweet").toggle(400);
+    $("textarea").focus();
+  });
   
+  $(window).on('scroll', () => {
+    const $toTop = $(".back-to-top");
+    if (window.scrollY > 160){
+      $toTop.css("display", "block");
+    } else {
+      $toTop.css("display", "none");
+    }
+  });
+
+  $(".back-to-top").on("click", () => {
+    $(window).scrollTop(0);
+  });
 
   const renderTweets = function(tweets) {
     $(".tweet-cage").empty();

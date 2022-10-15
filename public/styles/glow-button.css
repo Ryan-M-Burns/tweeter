@@ -43,6 +43,7 @@
 .write-tweet-button:hover {
   animation-name: flip;
   animation-duration: 2s;
+  animation-iteration-count: infinite;
   animation-direction: reverse;
 }
 
