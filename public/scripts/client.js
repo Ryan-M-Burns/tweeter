@@ -1,8 +1,11 @@
 $(document).ready(() => {
   
   const $form = $(".new-tweet");
+  const $writeTweet = $(".write-tweet-button");
   $("#error-box").hide();
-
+  
+  $writeTweet.on("click", () => $(".new-tweet").toggle(400));
+  
 
   const renderTweets = function(tweets) {
     $(".tweet-cage").empty();
