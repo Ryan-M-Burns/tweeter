@@ -8,6 +8,8 @@ html {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 24px;
+  background-color: rgba(47, 40, 28, 0.496);
+  background-image: url("../images/backgrounds/background1.png");
 }
 
 *,
@@ -21,16 +23,21 @@ html {
  */
 body {
   color: #545149;
-  background-color: rgb(47 40 28 / 25%);
+
 }
 
 main {
   width: 100%;
   padding: 5%;
-  background-color: rgb(47 40 28 / 25%);
-  background-image: url("../images/backgrounds/foggy-birds.png");
+
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ @media only screen and (min-width: 1024px) {
+  main {
+    padding-left: 40%;
+    padding-top: 130px;
+  }
+}

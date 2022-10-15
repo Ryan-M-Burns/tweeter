@@ -1,8 +1,13 @@
 $(document).ready(() => {
+  
   const $form = $(".new-tweet");
+  $("#error-box").hide();
+
 
   const renderTweets = function(tweets) {
-
+    $(".tweet-cage").empty();
+    $('html').css("background-image", randomBackground());
+    
     for (let tweet of tweets) {
       const $convTweet = createTweetElement(tweet);
       $(".tweet-cage").prepend($convTweet.tweetText);
@@ -10,6 +15,14 @@ $(document).ready(() => {
     }
 
   };
+
+
+  const randomBackground = function() {
+    
+    const randomInt = Math.ceil(Math.random()*24);
+    return `url("../images/backgrounds/background${randomInt}.png")`;
+
+  }
 
 
   const createTweetElement = function(tweet) {
@@ -44,11 +57,13 @@ $(document).ready(() => {
 
   };
 
+
   $form.on("reset", (event) => $("#tweet-text").val("").trigger("input"));
 
 
   $form.on("submit", (event) => {
     event.preventDefault();
+    
     const dataArray = $form.serializeArray();
     const dataToSend = $form.serialize();
     const dataToText = dataArray[0].value;
@@ -56,11 +71,11 @@ $(document).ready(() => {
 
 
     if (!dataToText) {
-      return $errorBox.text("Don't you have more to say?").slideDown();
+      return $errorBox.text("🦤 Don't you have more to say? 🦤").slideDown();
     }
 
     if (dataToText.length > 140) {
-      return $errorBox.text("Leave the Odysseys to Homer!").slideDown();
+      return $errorBox.text("📖 Leave the Odysseys to Homer! 📖").slideDown();
     }
 
     $form.trigger('reset');
@@ -69,9 +84,12 @@ $(document).ready(() => {
 
   });
 
+
   $("#tweet-text").focus(() => $("#error-box").slideUp());
 
+
   const loadTweets = () => $.get('/tweets', renderTweets);
+
 
   loadTweets();
 

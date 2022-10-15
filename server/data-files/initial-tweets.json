@@ -8,7 +8,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1665534616545
+    "created_at": 1665545017185
   },
   {
     "user": {
@@ -19,6 +19,17 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1665621016545
+    "created_at": 1665631417185
+  },
+  {
+    "user": {
+      "name": "Anouk Van Bogaert",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@AnoukVanHalen"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of Jaxson Baerg!"
+    },
+    "created_at": 1665717817185
   }
 ]
