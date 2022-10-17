@@ -1,17 +1,17 @@
 // Prepend new tweet to the existing tweets if legal tweet
 const generateTweets = (event) => {
-  const $form = $(".new-tweet");
   event.preventDefault();
 
+  const $form = $(".new-tweet");
   const dataArray = $form.serializeArray();
   const dataToSend = $form.serialize();
   const dataToText = dataArray[0].value;
 
   if (!isIllegalTweet(dataToText)) {
     $form.trigger('reset');
-
     $.post('/tweets', dataToSend, () => loadTweets());
   }
+
 };
 
 
@@ -39,6 +39,7 @@ const renderTweets = (tweets) => {
 
   for (let tweet of tweets) {
     const $convTweet = createTweetElement(tweet);
+    
     $tweetArea.prepend($convTweet.tweetText);
     $("#safe-text").text($convTweet.unsafeText);
   }
