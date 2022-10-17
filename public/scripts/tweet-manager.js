@@ -32,6 +32,7 @@ const isIllegalTweet = (tweet) => {
   return false;
 };
 
+
 const renderTweets = (tweets) => {
   const $tweetArea = $(".tweet-cage");
 
@@ -39,13 +40,15 @@ const renderTweets = (tweets) => {
 
   for (let tweet of tweets) {
     const $convTweet = createTweetElement(tweet);
-    
+
     $tweetArea.prepend($convTweet.tweetText);
     $("#safe-text").text($convTweet.unsafeText);
   }
 
 };
 
+
+// generates HTML for tweet
 const createTweetElement = (tweet) => {
   let difference = (Date.now() - tweet.created_at);
   let timeAgo = timeago.format((Date.now() - difference));
